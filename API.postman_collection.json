@@ -1,0 +1,204 @@
+{
+    "info": {
+        "name": "Employee Services API",
+        "_postman_id": "b7f3b5d3-99a0-4b44-a5b7-5c8e2b6d1e12",
+        "description": "Postman Collection for Employee Management RESTful API built using Spring Boot.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Employee (Name and Email)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"firstname\": \"shiva\",\n    \"lastname\": \"sai\",\n    \"email\": \"shiva@gmail.com\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/employees/createEmployee",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employees",
+                        "createEmployee"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Employee (Name, Email, and Phone)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"firstname\": \"vamshi\",\n    \"lastname\": \"varma\",\n    \"email\": \"vamshi@gmail.com\",\n    \"phone\": \"9876173401\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/employees/createEmployee",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employees",
+                        "createEmployee"
+                    ]
+                }
+            }
+        },{
+  "info": {
+    "name": "Employee Service API",
+    "description": "Note: Each endpoint that requires a 'methodType' supports three options — 'jpa', 'hql', and 'native'. You can select any one of these while calling the API. Examples:\n- JPA: Uses Spring Data JPA repository methods.\n- HQL: Uses Hibernate Query Language.\n- Native: Executes direct SQL queries on the database."
+  }
+},
+    
+        {
+            "name": "Fetch Employee by Email",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/employees/getEmployeeByEmail/shiva@gmail.com/method/jpa",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employees",
+                        "getEmployeeByEmail",
+                        "shiva@gmail.com",
+                        "method",
+                        "jpa"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Fetch Employee by Name",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/api/employees/getEmployeeByFirstname/shiva/method/hql",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employees",
+                        "getEmployeeByFirstname",
+                        "shiva",
+                        "method",
+                        "hql"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Employee Details (Last Name, Phone, Address)",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"lastname\": \"UpdatedLast\",\n    \"phone\": \"9000000000\",\n    \"address\": \"Hyderabad, Telangana\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/employees/updateEmployee/email/shiva@gmail.com/method/native",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employees",
+                        "updateEmployee",
+                        "email",
+                        "shiva@gmail.com",
+                        "method",
+                        "native"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Employee Phone Only",
+            "request": {
+                "method": "PATCH",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"phone\": \"8888888888\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/employees/updatePhone/email/shiva@gmail.com",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employees",
+                        "updatePhone",
+                        "email",
+                        "shiva@gmail.com"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Delete Employee by Email",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8080/api/employees/deleteEmployeeByEmail/shiva@gmail.com/method/jpa",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employees",
+                        "deleteEmployeeByEmail",
+                        "shiva@gmail.com",
+                        "method",
+                        "jpa"
+                    ]
+                }
+            }
+        }
+    ]
+}
